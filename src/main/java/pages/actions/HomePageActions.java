@@ -19,11 +19,26 @@ public class HomePageActions {
         SeleniumDriver.openPage("localhost:8282");
     }
 
+    public void openItemsPage(){
+        SeleniumDriver.openPage("localhost:8282/items");
+    }
+
     public void goToLoginPage() {
         locators.loginLink.click();
     }
 
     public boolean isLogoutButton() {
         return SeleniumHelper.isElementPresent(locators.logoutButton);
+    }
+
+    public void logoutFromSystem(){
+        locators.logoutButton.click();
+    }
+
+    public boolean isUserNotLogged(){
+       return SeleniumHelper.isElementPresent(locators.loginLink) ;
+    }
+    public void additem(){
+        locators.addItems.click();
     }
 }
